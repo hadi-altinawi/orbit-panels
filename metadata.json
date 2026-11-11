@@ -1,0 +1,8 @@
+{
+  "uuid": "orbit-panels@orbitpanels.dev",
+  "name": "Orbit Panels",
+  "description": "Add configurable panels to secondary displays",
+  "shell-version": ["50", "51"],
+  "url": "https://github.com/hadi-altinawi/orbit-panels",
+  "settings-schema": "org.gnome.shell.extensions.orbit-panels"
+}

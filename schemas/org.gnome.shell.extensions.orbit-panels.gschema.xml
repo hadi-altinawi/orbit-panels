@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.orbit-panels" path="/org/gnome/shell/extensions/orbit-panels/">
+    <key name="disabled-monitors" type="as">
+      <default>[]</default>
+      <summary>Displays without an Orbit panel</summary>
+      <description>Monitor indexes that are excluded from Orbit Panels.</description>
+    </key>
+    <key name="primary-monitor-index" type="i">
+      <default>0</default>
+      <range min="0" max="15"/>
+      <summary>Current primary display index</summary>
+      <description>Updated by GNOME Shell for the preferences display list.</description>
+    </key>
+    <key name="panel-position" type="s">
+      <choices>
+        <choice value="top"/>
+        <choice value="top-center"/>
+      </choices>
+      <default>'top'</default>
+      <summary>Panel position</summary>
+      <description>Horizontal placement of secondary display panels along the top edge.</description>
+    </key>
+    <key name="panel-height" type="i">
+      <range min="28" max="48"/>
+      <default>34</default>
+      <summary>Panel height</summary>
+      <description>Panel height in logical pixels.</description>
+    </key>
+    <key name="show-apps-button" type="b">
+      <default>true</default>
+      <summary>Show the apps button</summary>
+      <description>Show a button that opens the GNOME app overview.</description>
+    </key>
+    <key name="show-workspaces" type="b">
+      <default>true</default>
+      <summary>Show workspace buttons</summary>
+      <description>Show buttons for switching workspaces.</description>
+    </key>
+    <key name="show-clock" type="b">
+      <default>true</default>
+      <summary>Show the clock</summary>
+      <description>Show the current local time on each panel.</description>
+    </key>
+    <key name="show-date" type="b">
+      <default>true</default>
+      <summary>Show the date</summary>
+      <description>Include the localized date beside the clock.</description>
+    </key>
+    <key name="clock-format" type="s">
+      <choices>
+        <choice value="locale"/>
+        <choice value="24h"/>
+        <choice value="12h"/>
+      </choices>
+      <default>'locale'</default>
+      <summary>Clock format</summary>
+      <description>Use the system locale or force a 12-hour or 24-hour clock.</description>
+    </key>
+  </schema>
+</schemalist>
