@@ -48,3 +48,7 @@ node --check extension.js
 node --check prefs.js
 make pack
 ```
+
+## License
+
+Orbit Panels is licensed under the GNU General Public License, version 3 or (at your option) any later version. See [LICENSE](LICENSE).
