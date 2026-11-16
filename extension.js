@@ -253,6 +253,9 @@ export default class OrbitPanelsExtension extends Extension {
             this._displayIndicator.menu.addMenuItem(new PopupMenu.PopupMenuItem(
                 `${title}: ${details}`, {reactive: false}));
         });
+
+        this._displayIndicator.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
+        this._displayIndicator.menu.addAction(_('Preferences'), () => this.openPreferences());
     }
 
     _rebuild() {
