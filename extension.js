@@ -12,24 +12,32 @@ class OrbitPanel {
         this._settings = settings;
         this._workspaceButtons = [];
 
-        this.actor = new St.BoxLayout({
+        const centered = this._settings.get_string('panel-position') === 'top-center';
+        this.actor = new St.Widget({
+            layout_manager: new Clutter.BinLayout(),
+        });
+        this._panel = new St.BoxLayout({
             style_class: 'orbit-panel',
             reactive: true,
             can_focus: false,
+            x_expand: !centered,
+            x_align: Clutter.ActorAlign.CENTER,
+            y_expand: true,
         });
+        this.actor.add_child(this._panel);
 
         this._leftBox = new St.BoxLayout({
             style_class: 'orbit-panel-left',
             x_expand: true,
             y_align: Clutter.ActorAlign.CENTER,
         });
-        this.actor.add_child(this._leftBox);
+        this._panel.add_child(this._leftBox);
 
         this._rightBox = new St.BoxLayout({
             style_class: 'orbit-panel-right',
             y_align: Clutter.ActorAlign.CENTER,
         });
-        this.actor.add_child(this._rightBox);
+        this._panel.add_child(this._rightBox);
 
         if (this._settings.get_boolean('show-apps-button'))
             this._addAppsButton();
@@ -56,13 +64,8 @@ class OrbitPanel {
             });
 
         const height = this._settings.get_int('panel-height');
-        const centered = this._settings.get_string('panel-position') === 'top-center';
-        const [, naturalWidth] = this.actor.get_preferred_width(height);
-        const width = centered ? Math.min(naturalWidth, monitor.width) : monitor.width;
-        const x = monitor.x + Math.floor((monitor.width - width) / 2);
-        this.actor.set_position(x, monitor.y);
-        this.actor.set_size(width, height);
-
+        this.actor.set_position(monitor.x, monitor.y);
+        this.actor.set_size(monitor.width, height);
         Main.layoutManager.addChrome(this.actor, {
             affectsStruts: true,
             trackFullscreen: true,

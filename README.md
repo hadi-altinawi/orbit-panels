@@ -1,6 +1,6 @@
 # Orbit Panels
 
-Orbit Panels is a GNOME Shell extension for Ubuntu 26. It adds configurable panels to secondary displays, either across the top edge or centered at the top. Panels can show workspace switching, the GNOME app overview launcher, and a localized clock/date. A top-bar display indicator shows the connected-monitor count and display geometry. Panels update when monitors are connected or disconnected and hide for fullscreen windows.
+Orbit Panels is a GNOME Shell extension for Ubuntu 26. It adds configurable panels to secondary displays, either across the top edge or centered at the top. Panels can show workspace switching, the GNOME app overview launcher, and a localized clock/date. A top bar display indicator shows the connected monitor count and display geometry. Panels update when monitors are connected or disconnected and hide for fullscreen windows.
 
 ## Requirements
 
